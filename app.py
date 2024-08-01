@@ -1,6 +1,6 @@
 import sys
 import traceback
-from datetime import datetime
+from datetime import datetime, timezone
 
 from aiohttp import web
 from aiohttp.web import Request, Response, json_response
@@ -32,7 +32,7 @@ async def on_error(context: TurnContext, error: Exception):
         trace_activity = Activity(
             label="TurnError",
             name="on_turn_error Trace",
-            timestamp=datetime.utcnow(),
+            timestamp=datetime.now(timezone.utc),
             type=ActivityTypes.trace,
             value=str(error),
             value_type="https://www.botframework.com/schemas/error",
