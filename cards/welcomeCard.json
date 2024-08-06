@@ -1,0 +1,59 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "backgroundImage": {
+        "url": "https://adaptivecards.io/content/background.png"
+    },
+    "body": [
+        {
+            "type": "Container",
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "text": "Welcome to the Translator Bot",
+                    "weight": "bolder",
+                    "size": "extraLarge",
+                    "color": "accent",
+                    "horizontalAlignment": "center"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Please select your language:",
+                    "wrap": true,
+                    "spacing": "medium",
+                    "size": "medium"
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "id": "language",
+                    "style": "expanded",
+                    "choices": [
+                        {
+                            "title": "हिन्दी (Hindi)",
+                            "value": "english_hindi"
+                        },
+                        {
+                            "title": "French",
+                            "value": "english_french"
+                        },
+                        {
+                            "title": "Spanish",
+                            "value": "english_spanish"
+                        }
+                    ],
+                    "spacing": "medium"
+                }
+            ],
+            "spacing": "medium",
+            "horizontalAlignment": "center"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "OK",
+            "style": "positive"
+        }
+    ]
+}
